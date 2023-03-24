@@ -1,14 +1,18 @@
+namespace SpriteKind {
+    export const Player2 = SpriteKind.create()
+}
 function saysomething (list: any[]) {
     return list[randint(0, 2)]
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player2, function (sprite, otherSprite) {
+    game.gameOver(true)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     IT.setPosition(30, 55)
     Runner.setPosition(130, 55)
     effects.clearParticles(IT)
     Runner.startEffect(effects.fire)
-    if (IT.overlapsWith(Runner)) {
-        game.gameOver(true)
-    }
+    Runner.setKind(SpriteKind.Player2)
 })
 let Runner: Sprite = null
 let IT: Sprite = null
