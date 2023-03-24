@@ -1,12 +1,20 @@
 namespace SpriteKind {
     export const Player2 = SpriteKind.create()
 }
+/**
+ * Extension.
+ * 
+ * <--
+ */
 function saysomething (list: any[]) {
     return list[randint(0, 2)]
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player2, function (sprite, otherSprite) {
     game.gameOver(true)
 })
+/**
+ * Continuing and ending the game
+ */
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     IT.setPosition(30, 55)
     Runner.setPosition(130, 55)
@@ -14,6 +22,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
     Runner.startEffect(effects.fire)
     Runner.setKind(SpriteKind.Player2)
 })
+/**
+ * Array, Multiplayer and tile map
+ */
+/**
+ * Conditional statement and Boolean operators
+ * 
+ * While loop
+ */
+/**
+ * Function with parameter and return value
+ */
 let Runner: Sprite = null
 let IT: Sprite = null
 tiles.setCurrentTilemap(tilemap`level1`)
